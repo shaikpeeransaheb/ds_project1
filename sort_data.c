@@ -19,7 +19,7 @@ void sort_data(void)
                 p2=p1->next;
                 for(j=0;j<c-1-i;j++)
                 {
-                        if(p1->percentage>p2->percentage)
+                        if(p1->percentage<p2->percentage)
                         {
                                 t.rollnumber=p1->rollnumber;
                                 strcpy(t.name,p1->name);
@@ -27,7 +27,7 @@ void sort_data(void)
 
                                 p1->rollnumber=p2->rollnumber;
                                 strcpy(p1->name,p2->name);
- p1->percentage=p2->percentage;
+                                p1->percentage=p2->percentage;
 
                                 p2->rollnumber=t.rollnumber;
                                 strcpy(p2->name,t.name);
