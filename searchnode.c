@@ -6,7 +6,7 @@ void searchnode(void)
                 printf("no records found:\n");
                 return ;
         }
-        int f;
+        int f=0;
         char ch;
 
                 printf("enter r/R :for rollnumber and n/N:for name and p/P:for percentage");
