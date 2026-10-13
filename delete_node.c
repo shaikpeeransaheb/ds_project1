@@ -7,7 +7,7 @@ void delete_node(void)
                 return ;
         }
         char ch;
-        int num;
+        int num,flag=0;
         printf("enter r/R:rollnumber n/N:name\n");
         scanf(" %c",&ch);
         if(ch=='r'||ch=='R')
@@ -20,13 +20,9 @@ void delete_node(void)
                         if(del->rollnumber==num)
                         {
                                 if(del==head)
-                                {
+
                                         head=head->next;
-                                        return;
-                                }
-                                if(del==head)
-                                        head=del->next;
-else
+                                        else
                                                 prev->next=del->next;
                                                 free(del);
                                                 return;
@@ -41,26 +37,30 @@ else
                 char s[20];
                 printf("enter name to delete:\n");
                 scanf("%s",s);
-                struct stu *del=head,*prev;
+                struct stu *del=head,*prev=0;
                 while(del)
                 {
- if(strcmp(s,del->name)==0)
+                        struct stu *q=del->next;
+
+                        if(strcmp(s,del->name)==0)
                         {
+                                flag=1;
                                 if(del==head)
-                                {
-                                        head=head->next;
-                                        return;
-                                }
-                                if(del==head)
-                                        head=del->next;
+
+                                        head=q;
                                         else
-                                                prev->next=del->next;
+                                                prev->next=q;
                                                 free(del);
-                                                return;
+                                                del=q;
                         }
+                        else
+                        {
                         prev=del;
-                        del=del->next;
+                        del=q;
+                        }
                 }
-                printf("no name found...\n");
+                if(flag==0)
+                        printf("name not found:\n");
 }
 }
+
