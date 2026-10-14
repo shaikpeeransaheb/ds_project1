@@ -8,7 +8,7 @@ int main()
         while(1)
         {
                 printf("enter your choice:\n");
-                printf("a/A)add_node d/D)delete_node s/S)print_node v/V)savefile.c t/T)sort_data c/C)countnode l/L)deleteall r/R)reversedata m/M)searchnode z)exit\n");
+                printf("a/A)add_node d/D)delete_node s/S)print_node v/V)savefile.c t/T)sort_data c/C)countnode l/L)deleteall r/R)reversedata m/M)modify according to rollno z)exit\n");
                 scanf(" %c",&op);
                 switch(op)
                 {
